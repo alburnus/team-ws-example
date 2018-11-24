@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://pl/alburnus/springws/ws/wrapper"
+            xmlns:team="http://alburnus.pl/springws/ws/model"
+            targetNamespace="http://pl/alburnus/springws/ws/wrapper"
+            elementFormDefault="qualified">
+    <xsd:import namespace="http://alburnus.pl/springws/ws/model" schemaLocation="Team.xsd"/>
+    <xsd:element name="TeamDetailRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="TeamDetailResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="TeamDetail" type="team:Team"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
