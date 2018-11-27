@@ -11,15 +11,20 @@
 
     <properties>
         <context.path>team-ws-example</context.path>
-        <spring.version>3.1.1.RELEASE</spring.version>
-        <spring.ws.version>2.0.0.RELEASE</spring.ws.version>
+        <spring.ws.version>2.2.0.RELEASE</spring.ws.version>
         <log4j.version>1.2.16</log4j.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-ws</artifactId>
-            <version>1.2.0.RELEASE</version>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-core</artifactId>
+            <version>${spring.ws.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>wsdl4j</groupId>
