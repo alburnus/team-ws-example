@@ -8,8 +8,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import pl.alburnus.springws.team.service.TeamService;
 import pl.alburnus.springws.ws.model.Team;
-import pl.alburnus.springws.ws.wrapper.TeamDetailRequest;
-import pl.alburnus.springws.ws.wrapper.TeamDetailResponse;
+import pl.alburnus.springws.ws.wrapper.TeamRequest;
+import pl.alburnus.springws.ws.wrapper.TeamResponse;
 
 @Endpoint
 public class TeamEndpoint {
@@ -21,12 +21,12 @@ public class TeamEndpoint {
     private TeamService teamService;
 
     // localPart was critical point - when I had TeamDetailsRequest couldn't find mapping
-    @PayloadRoot(localPart = "TeamDetailRequest", namespace = TARGET_NAMESPACE)
-    public @ResponsePayload
-    TeamDetailResponse getDetail(@RequestPayload TeamDetailRequest request) {
-        TeamDetailResponse response = new TeamDetailResponse();
+    @PayloadRoot(localPart = "TeamRequest", namespace = TARGET_NAMESPACE)
+    @ResponsePayload
+    public TeamResponse getDetail(@RequestPayload TeamRequest request) {
+        TeamResponse response = new TeamResponse();
         Team team = teamService.getDetail("Nazwa");
-        response.setTeamDetail(team);
+        response.setTeam(team);
         return response;
     }
 }

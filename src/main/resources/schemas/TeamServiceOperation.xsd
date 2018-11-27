@@ -5,17 +5,17 @@
             targetNamespace="http://pl/alburnus/springws/ws/wrapper"
             elementFormDefault="qualified">
     <xsd:import namespace="http://alburnus.pl/springws/ws/model" schemaLocation="Team.xsd"/>
-    <xsd:element name="TeamDetailRequest">
+    <xsd:element name="TeamRequest">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="name" type="xsd:string"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:element name="TeamDetailResponse">
+    <xsd:element name="TeamResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="TeamDetail" type="team:Team"/>
+                <xsd:element name="Team" type="team:Team"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
