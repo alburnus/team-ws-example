@@ -16,16 +16,16 @@ import org.springframework.xml.xsd.XsdSchema;
 public class AppConfig extends WsConfigurerAdapter {
     // Bean name have influence to endpoint address TeamService.wsdl: http://localhost:8080/endpoints/TeamService.wsdl
     @Bean(name = "TeamService")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema studentsSchema) {
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema teamSchemas) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("TeamService");
         wsdl11Definition.setLocationUri("/endpoints");
-        wsdl11Definition.setTargetNamespace("http://pl/alburnus/springws/ws/wrapper");
-        wsdl11Definition.setSchema(studentsSchema);
+        wsdl11Definition.setTargetNamespace("http://pl/alburnus/springws/ws/team");
+        wsdl11Definition.setSchema(teamSchemas);
         return wsdl11Definition;
     }
     @Bean
-    public XsdSchema studentsSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("schemas/TeamServiceOperation.xsd"));
+    public XsdSchema teamSchemas() {
+        return new SimpleXsdSchema(new ClassPathResource("schemas/schema1.xsd"));
     }
 }

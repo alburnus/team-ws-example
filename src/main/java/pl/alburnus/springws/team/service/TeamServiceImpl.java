@@ -1,8 +1,7 @@
 package pl.alburnus.springws.team.service;
 
-
 import org.springframework.stereotype.Service;
-import pl.alburnus.springws.ws.model.Team;
+import pl.alburnus.springws.ws.team.Team;
 
 @Service
 public class TeamServiceImpl implements TeamService {
